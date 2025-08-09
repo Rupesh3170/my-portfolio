@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rupesh Kumar Sah - Portfolio</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <!-- Loading Screen -->
+    <div id="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">Rupesh Kumar Sah</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="navbar-actions">
+                <button id="theme-toggle" class="theme-toggle-button">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <div class="burger-menu" id="burger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Full-Stack Developer<span class="blinking-cursor">|</span></h1>
+                    <p>Building robust and scalable backend systems, while crafting clean and engaging user interfaces.</p>
+                    <a href="#contact" class="cta-button">Let's Connect</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About section -->
+        <section id="about" class="section-container">
+            <div class="container">
+                <h2 class="section-title fade-in">About Me</h2>
+                <div class="about-content fade-in">
+                    <div class="about-image">
+                        <!-- Updated image path -->
+                        <img src="public/profilepic.jpg" alt="Rupesh Kumar Sah profile picture" class="profile-img">
+                    </div>
+                    <div class="about-text">
+                        <h3>Passionate Full-Stack Developer</h3>
+                        <p>I'm a B.Tech student in Computer Science Engineering with a strong foundation in both frontend and backend development. My passion lies in building efficient, scalable, and secure web applications. My extensive work in backend development, as showcased in my GitHub repository, demonstrates my commitment to mastering server-side technologies like Node.js and Express.js, and integrating them with databases like MongoDB and Firebase.</p>
+                        <p>I thrive on solving complex problems and am constantly learning new technologies to build better and more reliable systems. I believe in creating seamless user experiences powered by robust backend architecture.</p>
+                        <div class="contact-info">
+                            <div class="contact-item">📍 Greater Noida, India</div>
+                            <div class="contact-item">🎓 B.Tech CSE (2021-2025)</div>
+                            <div class="contact-item">📊 GPA: 8.01/10.0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills section -->
+        <section id="skills" class="section-container">
+            <div class="container">
+                <h2 class="section-title fade-in">Technical Skills</h2>
+                <div class="skills-grid fade-in">
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Python</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frontend Technologies</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React.js</span>
+                            <span class="skill-tag">Redux</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                            <span class="skill-tag">EJS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Backend & Database</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Express.js</span>
+                            <span class="skill-tag">RESTful APIs</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Mongoose</span>
+                            <span class="skill-tag">Firebase</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools & Concepts</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Postman</span>
+                            <span class="skill-tag">Data Structures</span>
+                            <span class="skill-tag">Algorithms</span>
+                            <span class="skill-tag">OOP</span>
+                            <span class="skill-tag">DBMS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects section -->
+        <section id="projects" class="section-container">
+            <div class="container">
+                <h2 class="section-title fade-in">Featured Projects</h2>
+                <div class="projects-grid fade-in">
+                    <div class="project-card shining-border">
+                        <div class="project-header">
+                            <h3>NoteStack</h3>
+                            <div class="project-tech">React.js • Redux • Tailwind CSS • Vite</div>
+                        </div>
+                        <div class="project-content">
+                            <ul>
+                                <li>Responsive single-page application for creating, saving, and sharing notes</li>
+                                <li>Implemented Redux for global state management</li>
+                                <li>React Router for seamless client-side navigation</li>
+                                <li>Optimized development workflow with Vite, reducing build times by 40%</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://github.com/rupeshkumarsah/notestack" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="https://paste-app-delta-three.vercel.app" target="_blank" class="project-link live-demo">
+                                    <i class="fas fa-rocket"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card shining-border">
+                        <div class="project-header">
+                            <h3>Node.js Blog Application</h3>
+                            <div class="project-tech">Node.js • Express.js • MongoDB • EJS • Firebase</div>
+                        </div>
+                        <div class="project-content">
+                            <ul>
+                                <li>Full-stack blog application with user authentication and CRUD operations</li>
+                                <li>Built RESTful APIs to handle blog posts, comments, and user data</li>
+                                <li>Utilized EJS-based server-side views and manual route handling</li>
+                                <li>Implemented secure user registration and login functionality</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://github.com/Rupesh3170/Backend-_project_and_Learning" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="https://github.com/Rupesh3170/Backend-_project_and_Learning" target="_blank" class="project-link live-demo">
+                                    <i class="fas fa-rocket"></i> Repo Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card shining-border">
+                        <div class="project-header">
+                            <h3>LeetMetric</h3>
+                            <div class="project-tech">JavaScript • LeetCode API • HTML5 • CSS3</div>
+                        </div>
+                        <div class="project-content">
+                            <ul>
+                                <li>Dynamic web application for LeetCode statistics visualization</li>
+                                <li>Interactive UI with animated progress bars and statistical cards</li>
+                                <li>API integration for real-time data fetching</li>
+                                <li>Improved application reliability and reduced response times by 25%</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://github.com/rupeshkumarsah/leetmetric" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="https://leet-metric-one.vercel.app" target="_blank" class="project-link live-demo">
+                                    <i class="fas fa-rocket"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education section -->
+        <section id="education" class="section-container">
+            <div class="container">
+                <h2 class="section-title fade-in">Education</h2>
+                <div class="fade-in">
+                    <div class="education-card">
+                        <h3>GL Bajaj Institute of Technology and Management</h3>
+                        <div class="degree">Bachelor of Technology in Computer Science and Engineering</div>
+                        <p>📅 2021 - 2025 | 📍 Greater Noida, India</p>
+                        <div class="gpa">GPA: 8.01/10.0</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements section -->
+        <section id="achievements" class="section-container">
+            <div class="container">
+                <h2 class="section-title fade-in">Coding Achievements</h2>
+                <div class="achievements-grid fade-in">
+                    <div class="achievement-card shining-border">
+                        <span class="achievement-number">250+</span>
+                        <div class="achievement-label">Problems Solved on GeeksforGeeks</div>
+                    </div>
+                    <div class="achievement-card shining-border">
+                        <span class="achievement-number">100+</span>
+                        <div class="achievement-label">Problems Solved on LeetCode</div>
+                    </div>
+                    <div class="achievement-card shining-border">
+                        <span class="achievement-number">2nd</span>
+                        <div class="achievement-label">Position in College Esports</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact section -->
+        <section id="contact" class="section-container">
+            <div class="container">
+                <h2 class="section-title fade-in">Let's Connect</h2>
+                <div class="contact-grid fade-in">
+                    <div class="contact-card shining-border">
+                        <h3><i class="fas fa-envelope"></i> Email</h3>
+                        <a href="mailto:kumarrupesh3170@gmail.com">kumarrupesh3170@gmail.com</a>
+                    </div>
+                    <div class="contact-card shining-border">
+                        <h3><i class="fas fa-phone-alt"></i> Phone</h3>
+                        <a href="tel:+917877978562">+91-7877978562</a>
+                    </div>
+                    <div class="contact-card shining-border">
+                        <h3><i class="fab fa-linkedin"></i> LinkedIn</h3>
+                        <a href="https://linkedin.com/in/rupesh-kumar-sah" target="_blank">Connect with me</a>
+                    </div>
+                    <div class="contact-card shining-border">
+                        <h3><i class="fab fa-github"></i> GitHub</h3>
+                        <a href="https://github.com/rupeshkumarsah" target="_blank">View my repositories</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Rupesh Kumar Sah. Built with passion and dedication.</p>
+        </div>
+    </footer>
+
+    <!-- Link to the external JS file -->
+    <script src="script.js"></script>
+</body>
+</html>
