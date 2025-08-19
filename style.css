@@ -28,6 +28,16 @@
     --shadow-color: rgba(0, 0, 0, 0.5);
 }
 
+/* New color theme for the projects section */
+.projects-mode {
+    --background-color: #111111;
+    --background-darker: #1a1a1a;
+    --text-color: #e0e0e0;
+    --text-light: #ffffff;
+    --accent-color: #fd821d;
+    --secondary-accent: #6a11cb;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -42,7 +52,7 @@ body {
     background: var(--background-color);
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
     min-height: 100vh;
-    scroll-behavior: smooth;
+    will-change: background-color, transform;
     
     /* Animated background */
     background: linear-gradient(135deg, var(--background-color), var(--background-darker));
@@ -56,13 +66,18 @@ body {
     100% { background-position: 0% 50%; }
 }
 
+/* New: 3D container styling */
+#scroll-container {
+    perspective: 1000px;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Loader */
+/* Loader with SVG styling */
 #loader-wrapper {
     position: fixed;
     top: 0;
@@ -78,17 +93,27 @@ body {
 }
 
 .loader {
-    border: 5px solid var(--background-color);
-    border-top: 5px solid var(--accent-color);
-    border-radius: 50%;
     width: 50px;
     height: 50px;
-    animation: spin 1s linear infinite;
+    animation: rotate 2s linear infinite;
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
+.path {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+    stroke: var(--accent-color);
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
     100% { transform: rotate(360deg); }
+}
+
+@keyframes dash {
+    0% { stroke-dasharray: 1, 150; stroke-dashoffset: 0; }
+    50% { stroke-dasharray: 90, 150; stroke-dashoffset: -35; }
+    100% { stroke-dasharray: 90, 150; stroke-dashoffset: -124; }
 }
 
 /* Header & Navbar */
@@ -188,7 +213,7 @@ main {
 
 /* Hero section */
 .hero {
-    color: var(--text-color); /* Fix for light mode visibility */
+    color: var(--text-color);
     padding: 100px 0;
     text-align: center;
     position: relative;
@@ -198,14 +223,14 @@ main {
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    animation: fadeInUp 1s ease;
+    will-change: transform, opacity;
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     opacity: 0.9;
-    animation: fadeInUp 1s ease 0.2s both;
+    will-change: transform, opacity;
 }
 
 .blinking-cursor {
@@ -214,7 +239,7 @@ main {
 
 @keyframes blink {
     from, to { color: transparent; }
-    50% { color: var(--text-color); } /* Blink color now adapts to theme */
+    50% { color: var(--text-color); }
 }
 
 .cta-button {
@@ -226,7 +251,6 @@ main {
     text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease;
-    animation: fadeInUp 1s ease 0.4s both;
     box-shadow: 0 5px 15px var(--shadow-color);
 }
 
@@ -238,17 +262,6 @@ main {
 .cta-button:active {
     transform: translateY(1px);
     box-shadow: 0 2px 5px var(--shadow-color);
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* Section styling */
@@ -271,6 +284,7 @@ main {
     margin-bottom: 3rem;
     color: var(--text-color);
     position: relative;
+    will-change: transform, opacity;
 }
 
 .section-title::after {
@@ -295,6 +309,8 @@ main {
 
 .about-image {
     text-align: center;
+    transform-style: preserve-3d;
+    perspective: 1000px;
 }
 
 .profile-img {
@@ -304,10 +320,11 @@ main {
     object-fit: cover;
     border: 5px solid var(--accent-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: rotateX(0deg) rotateY(0deg);
 }
 
 .profile-img:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) perspective(1000px) rotateY(5deg);
     box-shadow: 0 5px 20px var(--shadow-color);
 }
 
@@ -351,6 +368,7 @@ main {
     border-radius: 10px;
     box-shadow: 0 5px 15px var(--shadow-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
 }
 
 .skill-category:hover {
@@ -394,6 +412,7 @@ main {
     transition: all 0.3s ease;
     position: relative;
     border: 1px solid transparent;
+    will-change: transform;
 }
 
 .project-card:hover {
@@ -530,6 +549,7 @@ main {
     box-shadow: 0 5px 15px var(--shadow-color);
     transition: transform 0.3s ease;
     color: var(--text-color);
+    will-change: transform;
 }
 
 .achievement-card:hover {
@@ -654,8 +674,6 @@ footer {
 }
 
 /* Utilities and Animations */
-
-/* Shining border effect */
 .shining-border {
     position: relative;
     z-index: 1;
@@ -683,26 +701,4 @@ footer {
 @keyframes shine {
     0% { background-position: 0% 0%; }
     100% { background-position: 100% 100%; }
-}
-
-/* Fade-in animation */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Hide the scrollbar for a cleaner look */
-body::-webkit-scrollbar {
-    width: 0;
-}
-
-body {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
 }
